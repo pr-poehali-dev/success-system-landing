@@ -351,7 +351,176 @@ const Index = () => {
         </div>
       </section>
 
+      <section id="tour" className="py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Что вы увидите на онлайн-экскурсии</h2>
+            <p className="text-lg text-muted-foreground">Живой показ реальной компании с внедрёнными инструментами</p>
+          </div>
 
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card className="border-2 hover:shadow-xl transition-all">
+              <CardHeader>
+                <div className="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                  <Icon name="LayoutDashboard" className="text-accent" size={28} />
+                </div>
+                <CardTitle className="text-xl mb-3">Рабочие дашборды в действии</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-accent mt-0.5 flex-shrink-0" size={18} />
+                    <span>Как руководители видят все показатели в реальном времени</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-accent mt-0.5 flex-shrink-0" size={18} />
+                    <span>Персонализированные панели для каждого отдела</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-accent mt-0.5 flex-shrink-0" size={18} />
+                    <span>Автоматические отчёты и аналитика</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:shadow-xl transition-all">
+              <CardHeader>
+                <div className="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                  <Icon name="Network" className="text-accent" size={28} />
+                </div>
+                <CardTitle className="text-xl mb-3">Организационная структура</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-accent mt-0.5 flex-shrink-0" size={18} />
+                    <span>Чёткое распределение ролей и ответственности</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-accent mt-0.5 flex-shrink-0" size={18} />
+                    <span>Иерархия подчинения и делегирования</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-accent mt-0.5 flex-shrink-0" size={18} />
+                    <span>Доступы и права по уровням</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:shadow-xl transition-all">
+              <CardHeader>
+                <div className="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                  <Icon name="CheckSquare" className="text-accent" size={28} />
+                </div>
+                <CardTitle className="text-xl mb-3">Система задач и проектов</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-accent mt-0.5 flex-shrink-0" size={18} />
+                    <span>Постановка, контроль и отчётность по задачам</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-accent mt-0.5 flex-shrink-0" size={18} />
+                    <span>Шаблоны процессов и автоматизация</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-accent mt-0.5 flex-shrink-0" size={18} />
+                    <span>Координация между отделами</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:shadow-xl transition-all">
+              <CardHeader>
+                <div className="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center mb-4">
+                  <Icon name="BookOpen" className="text-accent" size={28} />
+                </div>
+                <CardTitle className="text-xl mb-3">База знаний и регламенты</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-accent mt-0.5 flex-shrink-0" size={18} />
+                    <span>Документированные бизнес-процессы</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-accent mt-0.5 flex-shrink-0" size={18} />
+                    <span>Инструкции для сотрудников</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Icon name="Check" className="text-accent mt-0.5 flex-shrink-0" size={18} />
+                    <span>Быстрый поиск и онбординг</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="border-2 bg-accent/5">
+            <CardContent className="pt-8 pb-8">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold mb-4">Формат экскурсии</h3>
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Icon name="Video" className="text-accent" size={18} />
+                      </div>
+                      <div>
+                        <div className="font-semibold mb-1">Онлайн-встреча 30-40 минут</div>
+                        <div className="text-sm text-muted-foreground">Удобное для вас время в Zoom или Google Meet</div>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Icon name="Monitor" className="text-accent" size={18} />
+                      </div>
+                      <div>
+                        <div className="font-semibold mb-1">Живой показ системы</div>
+                        <div className="text-sm text-muted-foreground">Демонстрация реальной работы компании в Platrum</div>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Icon name="MessageCircle" className="text-accent" size={18} />
+                      </div>
+                      <div>
+                        <div className="font-semibold mb-1">Ответы на вопросы</div>
+                        <div className="text-sm text-muted-foreground">Обсудим ваши задачи и специфику бизнеса</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div className="bg-background rounded-lg p-6">
+                  <h4 className="text-xl font-bold mb-4 text-center">Что вы получите</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <Icon name="CheckCircle2" className="text-green-600 flex-shrink-0" size={24} />
+                      <span>Понимание возможностей системы</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Icon name="CheckCircle2" className="text-green-600 flex-shrink-0" size={24} />
+                      <span>Примеры реальных решений</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Icon name="CheckCircle2" className="text-green-600 flex-shrink-0" size={24} />
+                      <span>Оценку сроков и стоимости</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Icon name="CheckCircle2" className="text-green-600 flex-shrink-0" size={24} />
+                      <span>Рекомендации для вашего бизнеса</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
 
       <section id="contact" className="py-20 bg-primary text-primary-foreground">
         <div className="container">
