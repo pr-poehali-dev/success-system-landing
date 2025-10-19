@@ -112,30 +112,34 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="problems" className="py-20 bg-card">
-        <div className="container">
+      <section id="problems" className="py-20 bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50 dark:from-red-950/20 dark:via-orange-950/20 dark:to-yellow-950/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div className="container relative z-10">
           <div className="text-center mb-16 animate-fade-in-up">
+            <div className="inline-block px-4 py-2 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full mb-4 text-sm font-semibold">
+              Проблемы, которые мы решаем
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Типичные вызовы растущего бизнеса</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Системные проблемы, которые мы решаем для наших клиентов
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: 'AlertCircle', title: 'Низкая эффективность', desc: 'Ручные процессы, дублирование задач, системные ошибки' },
-              { icon: 'BarChart3', title: 'Отсутствие контроля', desc: 'Невозможность отслеживать KPI и ход выполнения задач' },
-              { icon: 'TrendingDown', title: 'Ограничения в росте', desc: 'Устаревшие процессы препятствуют масштабированию' },
-              { icon: 'Users', title: 'Управление персоналом', desc: 'Сложности с коммуникацией и координацией команды' },
-              { icon: 'DollarSign', title: 'Неэффективные затраты', desc: 'Нерациональное использование ресурсов и бюджета' },
-              { icon: 'Clock', title: 'Потеря времени', desc: 'Избыточное время на рутинные операции' },
+              { icon: 'AlertCircle', title: 'Низкая эффективность', desc: 'Ручные процессы, дублирование задач, системные ошибки', color: 'red' },
+              { icon: 'BarChart3', title: 'Отсутствие контроля', desc: 'Невозможность отслеживать KPI и ход выполнения задач', color: 'orange' },
+              { icon: 'TrendingDown', title: 'Ограничения в росте', desc: 'Устаревшие процессы препятствуют масштабированию', color: 'red' },
+              { icon: 'Users', title: 'Управление персоналом', desc: 'Сложности с коммуникацией и координацией команды', color: 'orange' },
+              { icon: 'DollarSign', title: 'Неэффективные затраты', desc: 'Нерациональное использование ресурсов и бюджета', color: 'yellow' },
+              { icon: 'Clock', title: 'Потеря времени', desc: 'Избыточное время на рутинные операции', color: 'orange' },
             ].map((item, idx) => (
-              <Card key={idx} className="animate-fade-in-up hover:shadow-lg transition-shadow border" style={{ animationDelay: `${idx * 100}ms` }}>
+              <Card key={idx} className={`animate-fade-in-up hover:shadow-2xl transition-all border-2 bg-white dark:bg-gray-950 group hover:-translate-y-1`} style={{ animationDelay: `${idx * 100}ms` }}>
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                    <Icon name={item.icon} className="text-primary" size={24} />
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br from-${item.color}-500 to-${item.color}-600 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
+                    <Icon name={item.icon} className="text-white" size={28} />
                   </div>
-                  <CardTitle className="text-xl">{item.title}</CardTitle>
+                  <CardTitle className="text-xl group-hover:text-${item.color}-600 transition-colors">{item.title}</CardTitle>
                   <CardDescription className="text-base">{item.desc}</CardDescription>
                 </CardHeader>
               </Card>
@@ -144,30 +148,46 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="benefits" className="py-20 bg-background">
-        <div className="container">
+      <section id="benefits" className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-950/20 dark:via-indigo-950/20 dark:to-purple-950/20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-purple-200/30 to-transparent dark:from-purple-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-blue-200/30 to-transparent dark:from-blue-600/10 rounded-full blur-3xl"></div>
+        
+        <div className="container relative z-10">
           <div className="text-center mb-16">
+            <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full mb-4 text-sm font-semibold">
+              Почему выбирают нас
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Наши преимущества</h2>
-            <p className="text-lg text-muted-foreground">Почему клиенты выбирают нас в качестве партнера по трансформации</p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Почему клиенты выбирают нас в качестве партнера по трансформации</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: 'Target', title: 'Ориентация на результат', desc: 'Решаем бизнес-задачи, а не просто внедряем ПО' },
-              { icon: 'Package', title: 'Комплексный подход', desc: 'Полный цикл от аудита до долгосрочной поддержки' },
-              { icon: 'Settings', title: 'Индивидуальные решения', desc: 'Настройка платформы под специфику бизнеса' },
-              { icon: 'Zap', title: 'Быстрое внедрение', desc: 'Видимые результаты в первые недели работы' },
+              { icon: 'Target', title: 'Ориентация на результат', desc: 'Решаем бизнес-задачи, а не просто внедряем ПО', gradient: 'from-blue-500 to-cyan-500' },
+              { icon: 'Package', title: 'Комплексный подход', desc: 'Полный цикл от аудита до долгосрочной поддержки', gradient: 'from-indigo-500 to-purple-500' },
+              { icon: 'Settings', title: 'Индивидуальные решения', desc: 'Настройка платформы под специфику бизнеса', gradient: 'from-purple-500 to-pink-500' },
+              { icon: 'Zap', title: 'Быстрое внедрение', desc: 'Видимые результаты в первые недели работы', gradient: 'from-cyan-500 to-blue-500' },
             ].map((benefit, idx) => (
-              <Card key={idx} className="text-center hover:shadow-lg transition-shadow border">
+              <Card key={idx} className="text-center hover:shadow-2xl transition-all border-2 bg-white dark:bg-gray-950 group hover:-translate-y-2">
                 <CardHeader>
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Icon name={benefit.icon} className="text-primary" size={32} />
+                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${benefit.gradient} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-xl`}>
+                    <Icon name={benefit.icon} className="text-white" size={36} />
                   </div>
                   <CardTitle className="text-lg mb-2">{benefit.title}</CardTitle>
                   <CardDescription>{benefit.desc}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <div className="inline-block relative">
+              <img 
+                src="https://cdn.poehali.dev/projects/fae0f8b8-eb04-4ac2-9339-dc749de6e54f/files/51734c40-d9b0-43f4-93fc-695c968706c9.jpg"
+                alt="Наши преимущества"
+                className="rounded-2xl shadow-2xl max-h-64 w-auto mx-auto"
+              />
+            </div>
           </div>
         </div>
       </section>
