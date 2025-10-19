@@ -14,7 +14,7 @@ const Index = () => {
     e.preventDefault();
     toast({
       title: "Заявка отправлена!",
-      description: "Наш менеджер свяжется с вами в ближайшее время.",
+      description: "Мы свяжемся с вами для согласования времени онлайн-экскурсии.",
     });
     setFormData({ name: '', phone: '', email: '' });
   };
@@ -144,7 +144,35 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="solutions" className="py-20 bg-background">
+      <section id="benefits" className="py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Наши преимущества</h2>
+            <p className="text-lg text-muted-foreground">Почему клиенты выбирают нас в качестве партнера по трансформации</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: 'Target', title: 'Ориентация на результат', desc: 'Решаем бизнес-задачи, а не просто внедряем ПО' },
+              { icon: 'Package', title: 'Комплексный подход', desc: 'Полный цикл от аудита до долгосрочной поддержки' },
+              { icon: 'Settings', title: 'Индивидуальные решения', desc: 'Настройка платформы под специфику бизнеса' },
+              { icon: 'Zap', title: 'Быстрое внедрение', desc: 'Видимые результаты в первые недели работы' },
+            ].map((benefit, idx) => (
+              <Card key={idx} className="text-center hover:shadow-lg transition-shadow border">
+                <CardHeader>
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                    <Icon name={benefit.icon} className="text-primary" size={32} />
+                  </div>
+                  <CardTitle className="text-lg mb-2">{benefit.title}</CardTitle>
+                  <CardDescription>{benefit.desc}</CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="solutions" className="py-20 bg-card">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Пакеты услуг по внедрению</h2>
@@ -323,33 +351,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="benefits" className="py-20 bg-card">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Наши преимущества</h2>
-            <p className="text-lg text-muted-foreground">Почему клиенты выбирают нас в качестве партнера по трансформации</p>
-          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: 'Target', title: 'Ориентация на результат', desc: 'Решаем бизнес-задачи, а не просто внедряем ПО' },
-              { icon: 'Package', title: 'Комплексный подход', desc: 'Полный цикл от аудита до долгосрочной поддержки' },
-              { icon: 'Settings', title: 'Индивидуальные решения', desc: 'Настройка платформы под специфику бизнеса' },
-              { icon: 'Zap', title: 'Быстрое внедрение', desc: 'Видимые результаты в первые недели работы' },
-            ].map((benefit, idx) => (
-              <Card key={idx} className="text-center hover:shadow-lg transition-shadow border">
-                <CardHeader>
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Icon name={benefit.icon} className="text-primary" size={32} />
-                  </div>
-                  <CardTitle className="text-lg mb-2">{benefit.title}</CardTitle>
-                  <CardDescription>{benefit.desc}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section id="contact" className="py-20 bg-primary text-primary-foreground">
         <div className="container">
@@ -358,7 +360,7 @@ const Index = () => {
               Начните трансформацию вашего бизнеса
             </h2>
             <p className="text-lg mb-8 opacity-90">
-              Получите персональное коммерческое предложение в течение 24 часов
+              Запишитесь на онлайн-экскурсию в компанию с внедрёнными и работающими инструментами систематизации
             </p>
 
             <Card className="max-w-md mx-auto border-2 shadow-xl">
@@ -394,7 +396,7 @@ const Index = () => {
                     />
                   </div>
                   <Button type="submit" className="w-full" size="lg" variant="secondary">
-                    Получить коммерческое предложение
+                    Записаться на онлайн-экскурсию
                   </Button>
                 </form>
               </CardContent>
