@@ -26,8 +26,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 w-full border-b bg-card shadow-sm">
-        <div className="container flex h-16 items-center justify-between">
+      <header className="sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur-md shadow-sm">
+        <div className="container flex h-20 items-center justify-between">
           <div className="flex items-center gap-2">
             <Icon name="Building2" size={28} className="text-primary" />
             <span className="text-xl font-bold">СистемаУспех</span>
@@ -61,14 +61,18 @@ const Index = () => {
         </div>
       </header>
 
-      <section id="hero" className="relative py-24 md:py-40 overflow-hidden bg-background">
-        <div className="container">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section id="hero" className="relative py-24 md:py-40 overflow-hidden bg-gradient-to-b from-background to-muted/30">
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)', backgroundSize: '40px 40px'}}></div>
+        </div>
+        <div className="container relative">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="animate-fade-in-up max-w-2xl">
-              <div className="inline-block px-4 py-1.5 bg-muted text-muted-foreground rounded-full mb-6 text-sm font-medium border border-border">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/5 text-primary rounded-md mb-8 text-sm font-semibold border border-primary/10">
+                <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></div>
                 Профессиональное внедрение систем управления
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-8 text-foreground tracking-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-8 text-foreground">
                 Систематизация бизнес-процессов с платформой Platrum
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -84,37 +88,52 @@ const Index = () => {
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-8 mt-16 pt-12 border-t">
-                <div>
-                  <div className="text-4xl font-bold text-foreground mb-2">50+</div>
-                  <div className="text-sm text-muted-foreground leading-tight">Успешных проектов</div>
+              <div className="grid grid-cols-3 gap-8 mt-16 pt-12 border-t border-border/50">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-accent/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative p-4">
+                    <div className="text-5xl font-bold text-primary mb-2">50+</div>
+                    <div className="text-sm text-muted-foreground leading-tight uppercase tracking-wide">Успешных проектов</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-4xl font-bold text-foreground mb-2">98%</div>
-                  <div className="text-sm text-muted-foreground leading-tight">Довольных клиентов</div>
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-accent/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative p-4">
+                    <div className="text-5xl font-bold text-primary mb-2">98%</div>
+                    <div className="text-sm text-muted-foreground leading-tight uppercase tracking-wide">Довольных клиентов</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-4xl font-bold text-foreground mb-2">280%</div>
-                  <div className="text-sm text-muted-foreground leading-tight">Средний ROI</div>
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-accent/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative p-4">
+                    <div className="text-5xl font-bold text-primary mb-2">280%</div>
+                    <div className="text-sm text-muted-foreground leading-tight uppercase tracking-wide">Средний ROI</div>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="relative animate-fade-in">
-              <img 
-                src="https://cdn.poehali.dev/projects/fae0f8b8-eb04-4ac2-9339-dc749de6e54f/files/9a3d8e01-a352-411b-a644-ac35f504f70f.jpg" 
-                alt="Управление бизнесом с Platrum"
-                className="w-full h-auto object-cover rounded-lg"
-              />
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-accent/10 to-transparent rounded-2xl blur-2xl"></div>
+              <div className="relative border-2 border-border rounded-lg overflow-hidden shadow-2xl">
+                <img 
+                  src="https://cdn.poehali.dev/projects/fae0f8b8-eb04-4ac2-9339-dc749de6e54f/files/9a3d8e01-a352-411b-a644-ac35f504f70f.jpg" 
+                  alt="Управление бизнесом с Platrum"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="problems" className="py-24 bg-muted/30">
+      <section id="problems" className="py-24 bg-background">
         <div className="container">
           <div className="text-center mb-20 animate-fade-in-up max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground tracking-tight">Типичные вызовы растущего бизнеса</h2>
+            <div className="inline-block px-4 py-1 bg-primary/10 text-primary rounded-md mb-6 text-sm font-semibold uppercase tracking-wider">
+              Проблемы, которые мы решаем
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Типичные вызовы растущего бизнеса</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Системные проблемы, которые мы решаем для наших клиентов
             </p>
@@ -129,10 +148,10 @@ const Index = () => {
               { icon: 'DollarSign', title: 'Неэффективные затраты', desc: 'Нерациональное использование ресурсов и бюджета' },
               { icon: 'Clock', title: 'Потеря времени', desc: 'Избыточное время на рутинные операции' },
             ].map((item, idx) => (
-              <Card key={idx} className="animate-fade-in-up hover:shadow-lg transition-all group" style={{ animationDelay: `${idx * 100}ms` }}>
+              <Card key={idx} className="animate-fade-in-up hover:shadow-xl transition-all border-2 group hover:border-accent/20" style={{ animationDelay: `${idx * 100}ms` }}>
                 <CardHeader className="space-y-4">
-                  <div className="w-12 h-12 rounded-lg bg-foreground flex items-center justify-center">
-                    <Icon name={item.icon} className="text-background" size={24} />
+                  <div className="w-14 h-14 rounded-lg bg-primary flex items-center justify-center group-hover:bg-accent transition-colors">
+                    <Icon name={item.icon} className="text-primary-foreground" size={26} />
                   </div>
                   <CardTitle className="text-xl">{item.title}</CardTitle>
                   <CardDescription className="text-base">{item.desc}</CardDescription>
@@ -143,10 +162,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="benefits" className="py-24 bg-background">
+      <section id="benefits" className="py-24 bg-gradient-to-b from-muted/30 to-background">
         <div className="container">
           <div className="text-center mb-20 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground tracking-tight">Наши преимущества</h2>
+            <div className="inline-block px-4 py-1 bg-accent/10 text-accent rounded-md mb-6 text-sm font-semibold uppercase tracking-wider">
+              Почему выбирают нас
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Наши преимущества</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Почему клиенты выбирают нас в качестве партнера по трансформации</p>
           </div>
 
@@ -157,10 +179,10 @@ const Index = () => {
               { icon: 'Settings', title: 'Индивидуальные решения', desc: 'Настройка платформы под специфику бизнеса' },
               { icon: 'Zap', title: 'Быстрое внедрение', desc: 'Видимые результаты в первые недели работы' },
             ].map((benefit, idx) => (
-              <Card key={idx} className="text-center hover:shadow-lg transition-all group">
-                <CardHeader className="space-y-4">
-                  <div className="w-16 h-16 rounded-lg bg-foreground flex items-center justify-center mx-auto">
-                    <Icon name={benefit.icon} className="text-background" size={32} />
+              <Card key={idx} className="text-center hover:shadow-xl transition-all border-2 group hover:border-primary/20">
+                <CardHeader className="space-y-6 p-8">
+                  <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center mx-auto shadow-lg group-hover:scale-110 transition-transform">
+                    <Icon name={benefit.icon} className="text-primary-foreground" size={36} />
                   </div>
                   <CardTitle className="text-lg mb-2">{benefit.title}</CardTitle>
                   <CardDescription>{benefit.desc}</CardDescription>
