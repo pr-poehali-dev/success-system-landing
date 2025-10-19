@@ -61,14 +61,15 @@ const Index = () => {
         </div>
       </header>
 
-      <section id="hero" className="relative py-20 md:py-32 overflow-hidden bg-background">
-        <div className="container">
+      <section id="hero" className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(139,92,246,0.1),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.1),transparent_50%)]"></div>
+        <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up">
-              <div className="inline-block px-4 py-2 bg-accent/10 text-accent rounded mb-4 text-sm font-medium">
+              <div className="inline-block px-5 py-2 bg-gradient-to-r from-primary to-accent text-white rounded-full mb-6 text-sm font-semibold shadow-lg">
                 Профессиональное внедрение систем управления
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-foreground">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
                 Систематизация бизнес-процессов с платформой Platrum
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -84,38 +85,43 @@ const Index = () => {
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t">
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-1">50+</div>
+              <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-border/50">
+                <div className="group">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform">50+</div>
                   <div className="text-sm text-muted-foreground">Успешных проектов</div>
                 </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-1">98%</div>
+                <div className="group">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform">98%</div>
                   <div className="text-sm text-muted-foreground">Довольных клиентов</div>
                 </div>
-                <div>
-                  <div className="text-3xl font-bold text-primary mb-1">280%</div>
+                <div className="group">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-1 group-hover:scale-110 transition-transform">280%</div>
                   <div className="text-sm text-muted-foreground">Средний ROI</div>
                 </div>
               </div>
             </div>
 
             <div className="relative animate-fade-in">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg" />
-              <img 
-                src="https://cdn.poehali.dev/projects/fae0f8b8-eb04-4ac2-9339-dc749de6e54f/files/9a3d8e01-a352-411b-a644-ac35f504f70f.jpg" 
-                alt="Управление бизнесом с Platrum"
-                className="rounded-lg shadow-xl w-full relative z-10"
-              />
+              <div className="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-br from-primary/30 to-accent/30 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute -bottom-4 -right-4 w-96 h-96 bg-gradient-to-tl from-secondary/30 to-primary/30 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+              
+              <div className="relative bg-gradient-to-br from-card to-muted/50 rounded-3xl shadow-2xl overflow-hidden border-2 border-primary/20 backdrop-blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
+                <img 
+                  src="https://cdn.poehali.dev/projects/fae0f8b8-eb04-4ac2-9339-dc749de6e54f/files/9a3d8e01-a352-411b-a644-ac35f504f70f.jpg" 
+                  alt="Управление бизнесом с Platrum"
+                  className="w-full h-auto object-cover relative z-10 mix-blend-multiply dark:mix-blend-screen"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="problems" className="py-20 bg-card">
+      <section id="problems" className="py-20 bg-gradient-to-b from-background to-muted/30">
         <div className="container">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Типичные вызовы растущего бизнеса</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">Типичные вызовы растущего бизнеса</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Системные проблемы, которые мы решаем для наших клиентов
             </p>
@@ -130,10 +136,10 @@ const Index = () => {
               { icon: 'DollarSign', title: 'Неэффективные затраты', desc: 'Нерациональное использование ресурсов и бюджета' },
               { icon: 'Clock', title: 'Потеря времени', desc: 'Избыточное время на рутинные операции' },
             ].map((item, idx) => (
-              <Card key={idx} className="animate-fade-in-up hover:shadow-xl transition-all border-2 group" style={{ animationDelay: `${idx * 100}ms` }}>
+              <Card key={idx} className="animate-fade-in-up hover:shadow-2xl transition-all border-2 border-border/50 group hover:border-primary/30 backdrop-blur-sm bg-card/80" style={{ animationDelay: `${idx * 100}ms` }}>
                 <CardHeader>
-                  <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                    <Icon name={item.icon} className="text-accent" size={28} />
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4 group-hover:from-primary/30 group-hover:to-accent/30 transition-all group-hover:scale-110">
+                    <Icon name={item.icon} className="text-primary" size={28} />
                   </div>
                   <CardTitle className="text-xl">{item.title}</CardTitle>
                   <CardDescription className="text-base">{item.desc}</CardDescription>
@@ -144,10 +150,12 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="benefits" className="py-20 bg-background">
-        <div className="container">
+      <section id="benefits" className="py-20 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tl from-accent/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="container relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Наши преимущества</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">Наши преимущества</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Почему клиенты выбирают нас в качестве партнера по трансформации</p>
           </div>
 
@@ -158,10 +166,10 @@ const Index = () => {
               { icon: 'Settings', title: 'Индивидуальные решения', desc: 'Настройка платформы под специфику бизнеса' },
               { icon: 'Zap', title: 'Быстрое внедрение', desc: 'Видимые результаты в первые недели работы' },
             ].map((benefit, idx) => (
-              <Card key={idx} className="text-center hover:shadow-xl transition-all border-2 group">
+              <Card key={idx} className="text-center hover:shadow-2xl transition-all border-2 border-border/50 group hover:border-accent/50 backdrop-blur-sm bg-card/80 hover:-translate-y-2">
                 <CardHeader>
-                  <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                    <Icon name={benefit.icon} className="text-primary" size={36} />
+                  <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-primary via-accent to-secondary flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg">
+                    <Icon name={benefit.icon} className="text-white" size={40} />
                   </div>
                   <CardTitle className="text-lg mb-2">{benefit.title}</CardTitle>
                   <CardDescription>{benefit.desc}</CardDescription>
