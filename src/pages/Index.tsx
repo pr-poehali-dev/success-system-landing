@@ -75,55 +75,36 @@ const Index = () => {
                 Обеспечиваем контроль, прозрачность и масштабируемость бизнеса через проверенные методологии управления. Работаем с компаниями от 10 до 500+ сотрудников.
               </p>
               
-              <Card className="max-w-md border-2 shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-xl">Запросить аудит бизнес-процессов</CardTitle>
-                  <CardDescription>Бесплатная диагностика текущего состояния системы управления</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <Label htmlFor="name">Имя</Label>
-                      <Input 
-                        id="name" 
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        required 
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="phone">Телефон</Label>
-                      <Input 
-                        id="phone" 
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        required 
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="email">Email</Label>
-                      <Input 
-                        id="email" 
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        required 
-                      />
-                    </div>
-                    <Button type="submit" className="w-full" size="lg">
-                      Запросить аудит
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+              <div className="flex flex-wrap gap-4">
+                <Button size="lg" onClick={() => scrollToSection('contact')}>
+                  Получить консультацию
+                </Button>
+                <Button size="lg" variant="outline" onClick={() => scrollToSection('solutions')}>
+                  Наши решения
+                </Button>
+              </div>
+
+              <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t">
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-1">50+</div>
+                  <div className="text-sm text-muted-foreground">Успешных проектов</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-1">98%</div>
+                  <div className="text-sm text-muted-foreground">Довольных клиентов</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary mb-1">280%</div>
+                  <div className="text-sm text-muted-foreground">Средний ROI</div>
+                </div>
+              </div>
             </div>
 
             <div className="relative animate-fade-in">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg" />
               <img 
-                src="https://cdn.poehali.dev/projects/fae0f8b8-eb04-4ac2-9339-dc749de6e54f/files/397e376d-247a-418d-9028-30427fdebe53.jpg" 
-                alt="Корпоративное управление"
+                src="https://cdn.poehali.dev/projects/fae0f8b8-eb04-4ac2-9339-dc749de6e54f/files/9a3d8e01-a352-411b-a644-ac35f504f70f.jpg" 
+                alt="Управление бизнесом с Platrum"
                 className="rounded-lg shadow-xl w-full relative z-10"
               />
             </div>
