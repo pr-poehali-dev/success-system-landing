@@ -193,6 +193,48 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16 bg-background border-y">
+        <div className="container">
+          <div className="text-center mb-12">
+            <div className="inline-block px-4 py-1 bg-muted text-muted-foreground rounded-md mb-4 text-xs font-semibold uppercase tracking-widest">
+              Нам доверяют
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">Компании, с которыми мы работаем</h2>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+            {[
+              { name: 'ТехноЛидер', letters: 'ТЛ' },
+              { name: 'СтройМастер', letters: 'СМ' },
+              { name: 'МедиаПлюс', letters: 'МП' },
+              { name: 'ЛогистПро', letters: 'ЛП' },
+              { name: 'РитейлГрупп', letters: 'РГ' },
+              { name: 'ФинансКонсалт', letters: 'ФК' },
+            ].map((company, idx) => (
+              <div 
+                key={idx} 
+                className="group relative flex flex-col items-center justify-center p-6 rounded-lg hover:bg-muted/50 transition-all"
+              >
+                <div className="w-20 h-20 rounded-xl border-2 border-border bg-card flex items-center justify-center mb-3 group-hover:border-primary/30 transition-all group-hover:shadow-md">
+                  <span className="text-2xl font-bold text-primary/60 group-hover:text-primary transition-colors">
+                    {company.letters}
+                  </span>
+                </div>
+                <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors text-center">
+                  {company.name}
+                </span>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              Более 50 компаний из различных отраслей — от производства до ритейла — доверили нам автоматизацию своих бизнес-процессов
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="solutions" className="py-20 bg-card">
         <div className="container">
           <div className="text-center mb-16">
